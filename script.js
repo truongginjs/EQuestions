@@ -41,6 +41,6 @@ const click =async()=>{
 
     }))
     
-    console.log(result)
+    // console.log(result)
 }
 click()
