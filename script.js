@@ -1,14 +1,33 @@
-const show = $('.content-data')
+var questions = `
+I always to make it count
+You cherish those moment
+I’ll take it to my grave
+I’m playing this one close to the chest
+I’m gonna keep it on the down low
+I must say in hindsight, it was a happy moment I ever had
+The jacket goes with anything
+You lost me
+You completely lost me there
+Did I lose you ?
+`;
+
+let questionIndexs = []
+
 const dirFile = 'questions.txt';
+
 const getRandomQuestion = (stringArr, num = 5) => {
     const max = stringArr.length
     if (!isNaN(num) && num < 1) num = max / 2
     const indexs = new Array(num)
     let index = 0;
+    if(stringArr.length-questionIndexs.length<num) {
+        return null;
+    }
     while (index < num) {
         const v = Math.floor(Math.random() * max)
-        if (indexs.indexOf(v) < 0) {
+        if (questionIndexs.indexOf(v) < 0) {
             indexs.push(v)
+            questionIndexs.push(v)
             index++;
         }
     }
@@ -18,36 +37,39 @@ const getRandomQuestion = (stringArr, num = 5) => {
     return result;
 }
 
-const getQuestions = async () => {
-    let questions = [];
-    try{
+const getQuestions = () => {
+    return questions.split('\n').filter(x => ['', null, ' '].indexOf(x) < 0);
+};
+
+const getQuestionsOld = async () => {
+    let rs = [];
+    try {
         const response = await fetch(dirFile)
         const text = await response.text()
-        questions = text.split('\n').filter(x=>['',null,' '].indexOf(x)<0);
-    }catch(e){
+        rs = text.split('\n').filter(x => ['', null, ' '].indexOf(x) < 0);
+    } catch (e) {
         console.log(e)
     }
-    return questions;
+    return rs;
 }
 
-const click =async()=>{
+const click = async () => {
     const numOfQuestion = 5;
-    const qs = await getQuestions();
+    const qs = getQuestions();
+    // const qs = await getQuestions();
     const result = getRandomQuestion(qs, numOfQuestion)
-    let i =0;
-    const text = result.map((x)=>`<li class="list-group-item">${++i}. ${x}</li>`).join('')
-//     let text = `<div class="card" style="width: 18rem;">
-//     <h4 class="card-title">5 Questions English Everyday</h4>
-//     <img class="card-img-top" src="/resources/card-img.jpg" alt="Card image cap">
-//     <ul class="list-group list-group-flush">
-//     ${t}
-//     </ul>
-//   </div>`
-    show.html(text)
-}
-click()
+    if(result==null) {
+        alert("Library of question is Full!");
+        return;
+    }let i = 0;
+    const text = result.map((x) => `<li class="list-group-item">${++i}. ${x}</li>`).join('')
+    $('.content-data').html(text)
+    $('#indexs').html(questionIndexs.join(', '));
 
-$('#refresh-button').click(function (e) { 
+}
+
+$('#refresh-button').click(function (e) {
     e.preventDefault();
     click()
 });
+click()
