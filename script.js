@@ -10,6 +10,10 @@ You lost me
 You completely lost me there
 Did I lose you ?
 hello
+sau này chỉ làm chịu khó, cần cù bù siêng năng
+chỉ có làm mới có ăn
+cái loại không làm mà đòi có ăn
+thì ăn cơm với xì dầu :v
 `;
 
 let questionIndexs = []
