@@ -72,4 +72,10 @@ $('#refresh-button').click(function (e) {
     e.preventDefault();
     click()
 });
+
+$('#reload-button').click(function (e) { 
+    e.preventDefault();
+    questionIndexs=[]
+    $('#indexs').html('');
+});
 click()
