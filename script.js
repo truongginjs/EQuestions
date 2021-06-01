@@ -31,16 +31,23 @@ const getQuestions = async () => {
 }
 
 const click =async()=>{
-
     const numOfQuestion = 5;
     const qs = await getQuestions();
-    const result = getRandomQuestion(qs, numOfQuestion);
-    
-    show.html(result.map(x=>{
-        return `<p>${x}</p>`
-
-    }))
-    
-    // console.log(result)
+    const result = getRandomQuestion(qs, numOfQuestion)
+    let i =0;
+    const text = result.map((x)=>`<li class="list-group-item">${++i}. ${x}</li>`).join('')
+//     let text = `<div class="card" style="width: 18rem;">
+//     <h4 class="card-title">5 Questions English Everyday</h4>
+//     <img class="card-img-top" src="/resources/card-img.jpg" alt="Card image cap">
+//     <ul class="list-group list-group-flush">
+//     ${t}
+//     </ul>
+//   </div>`
+    show.html(text)
 }
 click()
+
+$('#refresh-button').click(function (e) { 
+    e.preventDefault();
+    click()
+});

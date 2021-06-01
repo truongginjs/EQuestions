@@ -1,21 +1,31 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Ramdom English Question</title>
+    <link rel="icon" href="resources/favicon.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <h4>5 Questions English Everyday</h4>
-    <div class="content-data"></div>
-
-
-
+    <div class="container" style="max-width:500px"> 
+      
+      <div class="card">
+        <h4 class="card-title">5 Questions English Everyday</h4>
+        <button type="button" id="refresh-button" class="btn btn-primary card-subtitle mb-2 text-muted" style="border-radius:25px;">
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+        </button>
+        <img class="card-img-top" src="/resources/card-img.jpg" alt="Card image cap">
+        <ul class="list-group list-group-flush content-data">
+        </ul>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -24,3 +34,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
