@@ -1,5 +1,5 @@
 var questions = `
-I always to make it count
+I always try to make it count
 You cherish those moment
 I’ll take it to my grave
 I’m playing this one close to the chest
@@ -9,11 +9,15 @@ The jacket goes with anything
 You lost me
 You completely lost me there
 Did I lose you ?
-hello
-sau này chỉ làm chịu khó, cần cù bù siêng năng
-chỉ có làm mới có ăn
-cái loại không làm mà đòi có ăn
-thì ăn cơm với xì dầu :v
+Today is not my day
+It drives me insane
+You have thin skin
+They get on my nerves
+Actually, I'm currently on my way over to my home
+I still get the monday blues
+Is everybody on
+Must be a bad internet connection
+I think he's frozen
 `;
 
 let questionIndexs = []
