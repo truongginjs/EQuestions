@@ -9,15 +9,6 @@ The jacket goes with anything
 You lost me
 You completely lost me there
 Did I lose you ?
-Today is not my day
-It drives me insane
-You have thin skin
-They get on my nerves
-Actually, I'm currently on my way over to my home
-I still get the monday blues
-Is everybody on
-Must be a bad internet connection
-I think he's frozen
 `;
 
 let questionIndexs = []
