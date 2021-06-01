@@ -9,6 +9,7 @@ The jacket goes with anything
 You lost me
 You completely lost me there
 Did I lose you ?
+hello
 `;
 
 let questionIndexs = []
