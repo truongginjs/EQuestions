@@ -1,5 +1,5 @@
 var questions = `
-I always try to make it count
+I always to make it count
 You cherish those moment
 I’ll take it to my grave
 I’m playing this one close to the chest
