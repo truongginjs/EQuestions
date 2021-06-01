@@ -64,7 +64,7 @@ const getQuestionsOld = async () => {
 
 const click = async () => {
     const numOfQuestion = 5;
-    const qs = getQuestions();
+    const qs = await getQuestionsOld();
     // const qs = await getQuestions();
     const result = getRandomQuestion(qs, numOfQuestion)
     if(result==null) {
