@@ -16,4 +16,4 @@ website: [EQuestions](https://truongginjs.github.io/EQuestions/)
 
 
 ## Auth
-Nguyện Minh trường & Hồ Lê Huy
+Nguyễn Minh trường & Hồ Lê Huy
