@@ -1,15 +1,4 @@
-var questions = `
-I always to make it count
-You cherish those moment
-I’ll take it to my grave
-I’m playing this one close to the chest
-I’m gonna keep it on the down low
-I must say in hindsight, it was a happy moment I ever had
-The jacket goes with anything
-You lost me
-You completely lost me there
-Did I lose you ?
-`;
+var questions = [];
 
 let questionIndexs = []
 
@@ -59,9 +48,11 @@ const getQuestions = async () => {
 
 const click = async () => {
     const numOfQuestion = 5;
-    const qs = await getQuestions();
+    if(questions.length === 0)
+        questions = await getQuestions();
+        
     // const qs = await getQuestions();
-    const result = getRandomQuestion(qs, numOfQuestion)
+    const result = getRandomQuestion(questions, numOfQuestion)
     if (result == null) {
         alert("Library of question is Full!");
         return;
