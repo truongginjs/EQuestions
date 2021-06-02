@@ -20,7 +20,7 @@ const getRandomQuestion = (stringArr, num = 5) => {
     if (!isNaN(num) && num < 1) num = max / 2
     const indexs = new Array(num)
     let index = 0;
-    if (stringArr.length - questionIndexs.length < num) {
+    if(stringArr.length-questionIndexs.length<num) {
         return null;
     }
     while (index < num) {
@@ -37,20 +37,16 @@ const getRandomQuestion = (stringArr, num = 5) => {
     return result;
 }
 
-const getQuestionsLocal = () => {
-    return questions.split('\n')
-        .filter(x => ['', null, ' '].indexOf(x) < 0)
-        .map(x => x.split('#'));
+const getQuestions = () => {
+    return questions.split('\n').filter(x => ['', null, ' '].indexOf(x) < 0);
 };
 
-const getQuestions = async () => {
+const getQuestionsOld = async () => {
     let rs = [];
     try {
         const response = await fetch(dirFile)
         const text = await response.text()
-        const t = text.split('\n').filter(x => ['', null, ' '].indexOf(x) < 0);
-        rs = t
-            .map(x => x.split('#'));
+        rs = text.split('\n').filter(x => ['', null, ' '].indexOf(x) < 0);
     } catch (e) {
         console.log(e)
     }
@@ -59,28 +55,14 @@ const getQuestions = async () => {
 
 const click = async () => {
     const numOfQuestion = 5;
-    const qs = await getQuestions();
+    const qs = await getQuestionsOld();
     // const qs = await getQuestions();
     const result = getRandomQuestion(qs, numOfQuestion)
-    if (result == null) {
+    if(result==null) {
         alert("Library of question is Full!");
         return;
-    } let i = 0;
-    const text = result.map((x) => {
-        i++;
-        return `
-        <li class="list-group-item" type="button" 
-        data-toggle="collapse" data-target="#CollapseAns${i}" 
-        aria-expanded="false" aria-controls="CollapseAns${i}">${i}. ${x[0]}</li>
-        <div class="collapse" id="CollapseAns${i}">
-            <div class="card card-body" data-toggle="tooltip" data-placement="bottom" title="${x.length === 3 ? x[2] : x[1]}">
-                <div class="font-italic">
-                    ${x[1]}
-                </div>
-            </div>
-        </div>
-        `
-    }).join('')
+    }let i = 0;
+    const text = result.map((x) => `<li class="list-group-item">${++i}. ${x}</li>`).join('')
     $('.content-data').html(text)
     $('#indexs').html(questionIndexs.join(', '));
 
@@ -91,9 +73,9 @@ $('#refresh-button').click(function (e) {
     click()
 });
 
-$('#reload-button').click(function (e) {
+$('#reload-button').click(function (e) { 
     e.preventDefault();
-    questionIndexs = []
+    questionIndexs=[]
     $('#indexs').html('');
 });
 click()
