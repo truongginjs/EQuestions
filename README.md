@@ -8,7 +8,7 @@ Open file questions.txt and add or edit like this
 
 ```bash
 I am still alive#Tui còn sống#triết học vl
-Hollysh*t mollet hair#Vãi l** luôn đầu cắt moi#triết học vl
+Hollysh*t mullet hair#Vãi l** luôn đầu cắt moi#triết học vl
 ```
 
 ## Usage
