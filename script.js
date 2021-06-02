@@ -73,9 +73,9 @@ const click = async () => {
         data-toggle="collapse" data-target="#CollapseAns${i}" 
         aria-expanded="false" aria-controls="CollapseAns${i}">${i}. ${x[0]}</li>
         <div class="collapse" id="CollapseAns${i}">
-            <div class="card card-body" data-toggle="tooltip" data-placement="bottom" title="${x.length === 3 ? x[2] : x[1]}">
-                <div class="font-italic">
-                    ${x[1]}
+            <div class="card card-body" data-toggle="tooltip" data-placement="bottom" title="${x.length >= 3 ? x[2] : x.length >= 2 ? x[1] : x[0]}">
+                <div class="font-italic text-success">
+                ${x.length >= 2 ? x[1] : x[0]}
                 </div>
             </div>
         </div>
