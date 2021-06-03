@@ -1,5 +1,6 @@
 var questions = [];
-
+var img = `resources/thumb_${Math.floor(Math.random()*10)}.jpg`
+$('.card-img-top').attr('src', img);
 let questionIndexs = []
 
 const dirFile = 'questions.txt';
