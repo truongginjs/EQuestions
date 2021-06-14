@@ -11,7 +11,7 @@ const getRandomQuestion = (stringArr, num = 5) => {
     const indexs = new Array(num)
     let index = 0;
     if (stringArr.length - questionIndexs.length < num) {
-        return null;
+        questionIndexs = []
     }
     while (index < num) {
         const v = Math.floor(Math.random() * max)
